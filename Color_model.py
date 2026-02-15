@@ -33,8 +33,8 @@ class ColorDataset(Dataset):
         img = cv2.imread(path)
 
         # --- 色モデルの前処理（HSV） ---
-        hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)   # (H,W,3) uint8
-        hsv = hsv.astype(np.float32) / 255.0         # float32 に統一（重要）
+        hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)   
+        hsv = hsv.astype(np.float32) / 255.0         
 
         # OpenCV resize のバグ対策
         hsv = cv2.resize(hsv, (128, 128), interpolation=cv2.INTER_LINEAR)
@@ -132,5 +132,6 @@ def export_color_onnx(model_path="color_model.pth", onnx_path="color_model.onnx"
 
 if __name__ == "__main__":
     export_color_onnx()
+
 
 
