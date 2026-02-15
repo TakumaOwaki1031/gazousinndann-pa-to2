@@ -77,7 +77,9 @@ python Color_model.py
 これにより以下のファイルが生成されます：
 
 models/
+
  ├ shape_model.onnx  
+ 
  └ color_model.onnx  
 
 ※ モデルは公開していないため、ユーザー自身で作成してください。
