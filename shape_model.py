@@ -84,7 +84,7 @@ class SimpleCNN(nn.Module):
 # 3. 学習ループ
 # ============================
 def train_model():
-    img_paths = glob.glob("dataset/taget*.jpg")
+    img_paths = glob.glob("dataset/taget")
     labels = [0 if "target" in p else 1 for p in img_paths]
 
     dataset = FaceDataset(img_paths, labels)
@@ -134,4 +134,5 @@ def export_onnx(model_path="shape_model.pth", onnx_path="shape_model.onnx"):
 
 if __name__ == "__main__":
     export_onnx()
+
 
