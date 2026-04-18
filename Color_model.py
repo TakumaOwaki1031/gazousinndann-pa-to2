@@ -83,7 +83,7 @@ class ColorCNN(nn.Module):
 #3. 学習ループ
 #============================
 def train_color_model():
-    img_paths = glob.glob("dataset/target/.*jpg")
+    img_paths = glob.glob("dataset/target/*.jpg")
     labels = [0 if "target" in p else 1 for p in img_paths]
 
     dataset = ColorDataset(img_paths, labels)
